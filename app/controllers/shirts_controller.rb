@@ -1,6 +1,14 @@
 class ShirtsController < ApplicationController
   before_action :set_shirt, only: [:show, :edit, :update, :destroy]
 
+  def price
+    @shirt.selected_edition = params[:edition]
+    respond_to do |format|
+      format.json { render json: @shirt, methods: [:total_price], only: [] }
+
+  end
+
+
   # GET /shirts
   # GET /shirts.json
   def index
