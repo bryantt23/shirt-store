@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <%= @shirt.title %>
+</h2>
+<p>
+ <%= image_tag(@shirt.image_url, width: 100)%>	
+</p>
+<p id="price">
+  $<%= @shirt.price %>
+</p>
+
+
+<%= simple_form_for(@order) do |f| %>
+<%= f.input :shirt_id, :as => :hidden %>
+<%= f.input :selected_edition, collection: @shirt.editions, label: "Select Edition", include_blank: false %>
+<%= f.submit %>
+<% end %>
+
+<p>
+<%= link_to 'Edit', edit_shirt_path(@shirt) %> |
+<%= link_to 'Back', shirts_path %>
+</p>

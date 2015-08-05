@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  shirt_id_id: 
+  selected_edition: MyString
+
+two:
+  shirt_id_id: 
+  selected_edition: MyString
